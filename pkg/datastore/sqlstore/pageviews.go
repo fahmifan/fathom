@@ -44,7 +44,7 @@ func (db *sqlstore) InsertPageviews(pageviews []*models.Pageview) error {
 	for i := range pageviews {
 
 		// test for columns with ignored values
-		if pageviews[i].IsBounce != true || pageviews[i].Duration > 0 || pageviews[i].IsFinished != false {
+		if !pageviews[i].IsBounce || pageviews[i].Duration > 0 || pageviews[i].IsFinished {
 			log.Warnf("inserting pageview with invalid column values for bulk-insert")
 		}
 
