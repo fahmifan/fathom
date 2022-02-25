@@ -73,8 +73,8 @@
     border: 0;
     padding: 0;
     width: var(--size-500);
-    height: var(--size-500);
-    text-indent: var(--size-300);
+    height: var(--size-700);
+    text-indent: 20px;
     white-space: nowrap;
     overflow: hidden;
     background-color: transparent;
@@ -131,7 +131,7 @@
 
 .pika-table th {
     color: var(--color-dark);
-    font-size: var(--size-base);
+    font-size: var(--size-300);
     line-height: 25px;
     font-weight: 500;
     text-align: center;
@@ -147,7 +147,7 @@
     margin: 0;
     width: 100%;
     padding: 4px;
-    color: #666;
+    color: var(--color-slate);
     font-size: var(--size-base);
     line-height: 16px;
     text-align: right;
@@ -155,7 +155,7 @@
 }
 
 .pika-week {
-    font-size: 11px;
+    font-size: var(--size-300);
     color: var(--color-mid);
 }
 
@@ -168,7 +168,7 @@
 .has-event .pika-button {
     color: var(--color-light);
     font-weight: 500;
-    background: var(--color-slate);
+    background: var(--color-primary);
 }
 
 .has-event .pika-button {
@@ -206,7 +206,7 @@
 
 .pika-button:hover,
 .pika-row.pick-whole-week:hover .pika-button {
-    color: var(--color-slate);
+    color: var(--color-dark);
     background: var(--color-secondary);
     box-shadow: none;
 }
@@ -215,6 +215,6 @@
     border: none;
     cursor: normal;
     text-decoration: none;
-        font-size: var(--size-base); 
+    font-size: var(--size-300); 
 }
 

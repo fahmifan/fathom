@@ -195,7 +195,7 @@ nav .settings svg:hover {
 }
 
 nav.date-nav {
-	margin: 32px 0 8px;
+	margin: var(--size-700) 0 8px;
 }
 
 nav.date-nav ul {
