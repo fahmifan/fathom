@@ -62,9 +62,13 @@ lint:
 
 .PHONY: test
 test:
-	for PKG in $(PACKAGES); do go test -cover -coverprofile $$GOPATH/src/$$PKG/coverage.out $$PKG || exit 1; done;
+	go test -cover -race ./...
 
 .PHONY: referrer-spam-blacklist
 referrer-spam-blacklist:
 	wget https://raw.githubusercontent.com/matomo-org/referrer-spam-blacklist/master/spammers.txt -O pkg/aggregator/data/blacklist.txt
 	go-bindata -prefix "pkg/aggregator/data/" -o pkg/aggregator/bindata.go -pkg aggregator pkg/aggregator/data/
+
+.PHONY: run-server
+run-server:
+	modd -f ./.modd/server.modd.conf
