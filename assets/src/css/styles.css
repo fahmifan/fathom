@@ -1,22 +1,45 @@
 /*
 overpass    200, 500, 600
-purple      #533feb
-green       #88ffc6
+purple      var(--color-primary)
+green       var(--color-secondary)
 
-dark        #46494d
-medium      #98a0a6
+dark        var(--color-dark)
+medium      #333
 light       #f5f7fa
 
 padding     8, 16, 20, 32, 64, 128, 256, 512, 1024
 font size   12, 16, 64
  */
 
+:root {
+	--color-primary: #533feb;
+	--color-secondary: #88ffc6;
+	--color-primary-shade: #2F17E0;
+	--color-primary-glare: #33aaff;
+	--color-highlight: #a0ffd1;
+	--color-light: #fff;
+	--color-dim: #f5f7fa;
+    --color-mid: #cccccc;
+    --color-dark: #222222;
+    --color-slate: #777;
+
+	--size-200: 0.25rem;
+	--size-300: 0.8rem;
+	--size-500: 1.25rem;
+	--size-600: 1.56rem;
+	--size-700: 1.95rem;
+	--size-800: 2.44rem;
+	--size-900: 3.05rem;
+	--size-base: 1rem;
+	--size-max: 4rem;
+}
+
 ::selection {
-	background: #a0ffd1;
+	background: var(--color-highlight);
 }
 
 ::-moz-selection {
-	background: #a0ffd1;
+	background: var(--color-highlight);
 }
 
 * {
@@ -27,7 +50,7 @@ font size   12, 16, 64
 	list-style: none;
 	box-sizing: border-box;
 	text-decoration: none;
-	font-size: 1rem;
+	font-size: var(--size-base);
 	vertical-align: baseline;
 	line-height: 1.2;
 }
@@ -40,7 +63,7 @@ html, body, #root {
 body {
 	overflow-y: scroll;
 	font: 400 16px "overpass", sans-serif;
-	color: #222;
+	color: var(--color-dark);
 	text-align: center;
 	padding: 8px;
 }
@@ -58,8 +81,9 @@ header, footer {
 section {}
 
 footer {
-	font-size: 1rem;
-	color: #aaa;
+	font-size: var(--size-base);
+	color: var(--color-dark);
+	padding-bottom: 2rem;
 }
 
 a {
@@ -68,15 +92,15 @@ a {
 
 nav {
 	position: relative;
-	font-size: 1rem;
+	font-size: var(--size-base);
 }
 
 nav a {
-	color: #222;
+	color: var(--color-dark);
 }
 
 footer nav a {
-	color: #222;
+	color: var(--color-dark);
 	padding: 4px 0;
 	display: inline-block;
 }
@@ -90,27 +114,27 @@ header li {
 }
 
 nav li.logo a {
-	color: #533feb;
+	color: var(--color-primary);
 	font-size: 16px;
 }
 
 nav li.logo a:hover {
-	color: #222;
+	color: var(--color-mid);
 }
 
 nav li.sites {
-	background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg aria-hidden='true' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23533feb' d='M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z'%3E%3C/path%3E%3C/svg%3E") 97% 8px no-repeat;
+	background: var(--color-light) url("data:image/svg+xml;charset=utf8,%3Csvg aria-hidden='true' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23533feb' d='M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z'%3E%3C/path%3E%3C/svg%3E") 97% 8px no-repeat;
 	border-radius: 4px;
 	padding: 8px;
 	background-size: 10px auto;
 }
 
 .site-switch {
-	font-size: 1rem;
+	font-size: var(--size-base);
 }
 
 nav li.sites.expanded {
-	background: #533feb url("data:image/svg+xml;charset=utf8,%3Csvg aria-hidden='true' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23fff' d='M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z'%3E%3C/path%3E%3C/svg%3E") 97% 8px no-repeat;
+	background: var(--color-mid) url("data:image/svg+xml;charset=utf8,%3Csvg aria-hidden='true' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23fff' d='M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z'%3E%3C/path%3E%3C/svg%3E") 97% 8px no-repeat;
 	background-size: 10px auto;
 }
 
@@ -119,7 +143,7 @@ nav li ul {
 	position: absolute;
 	z-index: 1001;
 	width: 100%;
-	background: #533feb;
+	background: var(--color-primary);
 	border-radius: 4px;
 	padding: 8px 0;
 	margin: 0 0 0 -8px;
@@ -131,7 +155,7 @@ nav li.expanded ul {
 }
 
 nav li.sites.expanded a {
-	color: #fff;
+	color: var(--color-light);
 }
 
 nav li ul li {
@@ -140,20 +164,20 @@ nav li ul li {
 }
 
 nav li ul a {
-	color: #222;
+	color: var(--color-dark);
 	display: inline-block;
 	width: 100%;
-	font-size: 1rem;
+	font-size: var(--size-base);
 	padding: 4px;
 }
 
 nav li ul a:hover {
-	background: rgba(255, 255, 255, .2);
+	background: var(--color-primary-shade);
 	border-radius: 2px;
 }
 
 nav li ul li.add-new a {
-	color: #88ffc6 !important;
+	color: var(--color-secondary) !important;
 }
 
 nav .settings svg {
@@ -163,7 +187,7 @@ nav .settings svg {
 }
 
 nav .settings svg path {
-	fill: #533feb;
+	fill: var(--color-primary);
 }
 
 nav .settings svg:hover {
@@ -190,7 +214,7 @@ nav.date-nav li {
 nav.date-nav li a,
 nav.date-nav li input {
 	margin-right: 8px;
-	color: #98a0a6;
+	color: var(--color-dark);
 }
 
 nav.date-nav li input {
@@ -203,14 +227,16 @@ nav.date-nav li input {
 	width: 9.8ch;
 	min-width: 60px;
 	text-align: center;
+	color: var(--color-dark);
 }
 
 nav.date-nav li.current a {
-	color: #533feb;
+	color: var(--color-primary);
+	font-weight: bold;
 }
 
 nav.date-nav li a:hover {
-	color: #2b2d2f;
+	color: #777;
 }
 
 nav.date-nav li span {
@@ -219,7 +245,7 @@ nav.date-nav li span {
 
 /*
 .date-nav { margin-bottom: 12px; }
-.date-nav li a { position: relative; font-size: 1rem; text-transform: uppercase; padding-right: 8px; }
+.date-nav li a { position: relative; font-size: var(--size-base); text-transform: uppercase; padding-right: 8px; }
 .date-nav li.custom { color: #aaa; float: right; margin: 0; }
 .date-nav li.custom input { 
 	display: inline-block;
@@ -231,11 +257,11 @@ nav.date-nav li span {
 	cursor: pointer; 
 }
 .date-nav li a:hover { color: #aaa; }
-.date-nav li.active a { padding-right: 8px; z-index: 1; color: #222; }
-.date-nav li.active a:after { content:""; background: #88ffc6; display: block; width: 100%; height: 3px; position: absolute; top: 6px; z-index: -1; margin: 0 0 0 -4px; }
+.date-nav li.active a { padding-right: 8px; z-index: 1; color: var(--color-dark); }
+.date-nav li.active a:after { content:""; background: var(--color-secondary); display: block; width: 100%; height: 3px; position: absolute; top: 6px; z-index: -1; margin: 0 0 0 -4px; }
 */
 .box {
-	background: #fff;
+	background: var(--color-light);
 	border-radius: 4px;
 	margin-bottom: 16px;
 	padding: 16px;
@@ -243,7 +269,7 @@ nav.date-nav li span {
 }
 
 .box-totals {
-	background: #222;
+	background: var(--color-dark);
 	color: #ddd;
 }
 
@@ -258,7 +284,7 @@ nav.date-nav li span {
 }
 
 .current-detail div {
-	color: #88ffc6;
+	color: var(--color-highlight);
 }
 
 .table-row {
@@ -270,17 +296,17 @@ nav.date-nav li span {
 }
 
 .table-row.header {
-	font-size: 1rem;
+	font-size: var(--size-base);
 	text-transform: uppercase;
-	color: #aaa;
+	color: var(--color-dark);
 }
 
 .table-row a {
-	color: #222;
+	color: var(--color-dark);
 }
 
 .table-row a:hover {
-	color: #533feb;
+	color: var(--color-primary);
 }
 
 .cell {
@@ -298,7 +324,7 @@ nav.date-nav li span {
 
 .table-row:after {
 	content: "";
-	background: #88ffc6;
+	background: var(--color-secondary);
 	position: absolute;
 	height: 34px;
 	top: 0;
@@ -320,7 +346,7 @@ nav.date-nav li span {
 }
 
 .row.pag a {
-	color: #98a0a6;
+	color: var(--color-mid);
 	font-size: 19px;
 }
 
@@ -342,7 +368,7 @@ nav.date-nav li span {
 	width: 100%;
 	margin: 0 auto;
 	text-align: left;
-	background: #fff;
+	background: var(--color-light);
 	z-index: 1978;
 	height: auto;
 	border-radius: 4px;
@@ -352,19 +378,24 @@ nav.date-nav li span {
 
 .modal p {
 	padding: 16px;
-	font-size: 1rem;
-	color: #aaa;
+	font-size: var(--size-base);
+	color: var(--color-dark);
 }
 
 small {
-	font-size: 1rem;
+	font-size: var(--size-base);
 	font-weight: bold;
-	color: #aaa;
+	color: var(--color-dark);
 }
 
 small a {
 	font-weight: bold;
-	color: #aaa;
+	color: var(--color-dark);
+}
+
+small a:hover {
+	font-weight: bold;
+	color: var(--color-mid);
 }
 
 .modal form {
@@ -388,24 +419,25 @@ fieldset:last-child {
 
 input, textarea {
 	background: #f5f7fa;
-	padding: 4px;
+	padding: var(--size-300);
 	width: 100%;
 	display: block;
-	font: 400 16px "overpass", sans-serif;
-	color: #222;
+	font-size: var(--size-base);
+	font-weight: 400;
+	color: var(--color-dark);
 	border-bottom: 2px solid #e6e8eb;
 }
 
 textarea {
-	font-size: 1rem;
+	font-size: var(--size-base);
 	min-height: 120px;
 	resize: none;
 	overflow-y: scroll;
 }
 
 button {
-	background: #88ffc6;
-	color: #222;
+	background: var(--color-secondary);
+	color: var(--color-dark);
 	padding: 4px 16px;
 	font: 400 16px "overpass", sans-serif;
 	cursor: pointer;
@@ -414,6 +446,10 @@ button {
 
 div.delete a {
 	color: red;
+}
+
+div.delete {
+	padding: var(--size-base) 0;
 }
 
 .w100:after {
@@ -881,6 +917,7 @@ div.delete a {
 		grid-column: 2/4;
 		grid-row: 1;
 		margin: 0 0 4px 0;
+		color: var(--color-dark);
 	}
 
 	.box-pages {
@@ -906,17 +943,21 @@ div.delete a {
 
 	.half div.submit {
 		text-align: left;
+ 	}
+
+	div.submit {
+		padding: var(--size-base) 0;
 	}
 
 	.totals-detail {
 		display: block;
-		margin-bottom: 32px;
+		margin-bottom: var(--size-700);
 	}
 
 	.total-heading {
-		font-size: 1rem;
+		font-size: var(--size-base);
 		text-transform: uppercase;
-		color: #999;
+		color: var(--color-mid);
 		line-height: .8;
 	}
 
@@ -950,7 +991,7 @@ div.delete a {
 .login-page label svg {
 	width: 16px;
 	height: auto;
-	fill: #533feb;
+	fill: var(--color-primary);
 	position: absolute;
 	left: -28px;
 	top: 12px;
@@ -960,7 +1001,7 @@ div.delete a {
 	border-radius: 0;
 	border: none;
 	outline: none;
-	background: #fff;
+	background: var(--color-light);
 	box-sizing: border-box;
 	width: 100%;
 	padding: 8px;
@@ -977,14 +1018,14 @@ div.delete a {
 	width: 100%;
 	box-sizing: border-box;
 	padding: 8px;
-	background: #533feb;
-	color: #fff;
+	background: var(--color-primary);
+	color: var(--color-light);
 	border: 0;
 	font: 400 16px/1 'overpass', sans-serif;
 }
 
 .login-page small {
-	color: #98a0a6;
+	color: var(--color-mid);
 	font-size: 14px;
 	margin: 48px auto 0 auto;
 	text-align: center;
@@ -992,8 +1033,14 @@ div.delete a {
 }
 
 .login-page small a {
-	color: #98a0a6;
+	color: var(--color-mid);
 	font-size: 14px;
 	display: inline-block;
 	padding: 0 8px;
+}
+
+.client-script {
+	font-family: monospace;
+	padding: var(--size-base);
+	margin: var(--size-base) 0;
 }

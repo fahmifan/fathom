@@ -1,6 +1,7 @@
 .box-graph {
 	background: white;
 	margin-left: 0 !important;
+	color: var(--color-dark);
 }
 
 #chart * { 
@@ -8,7 +9,7 @@
 }
 
 #chart .muted { 
-	fill: #98a0a6;
+	fill: var(--color-dark);
 }
 
 #chart {
@@ -16,11 +17,11 @@
 }
 
 .bar-pageviews {
-	fill: #88ffc6;
+	fill: var(--color-secondary);
 }
 
 .bar-visitors {
-	fill: #533feb;
+	fill: var(--color-primary);
 }
 
 .axis .domain{ 
@@ -36,12 +37,12 @@
 }
 
 .axis text {
-	font-size: 1rem;
-	fill: #98a0a6;
+	font-size: var(--size-base);
+	fill: var(--color-dark);
 }
 
 .d3-tip {
-	font-size: 1rem;
+	font-size: var(--size-base);
 	color: #959da5;
 	text-align: left;
 	background: rgba(0,0,0,.8);

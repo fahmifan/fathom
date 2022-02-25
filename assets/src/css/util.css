@@ -1,6 +1,6 @@
 .small-margin {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: var(--size-500);
+	margin-bottom: var(--size-300);
 }
 
 .cf:after {
@@ -14,9 +14,9 @@
 }
 
 .sm {
-    font-size: 11px;
+    font-size: var(--size-base);
     font-weight: 500;
-    color: #98a0a6;
+    color: var(--color-dark);
 }
 
 @media(max-width: 600px) {
@@ -33,7 +33,7 @@
 
 .notification {
 	position: fixed;
-	top: 20px;
+	top: var(--size-300);
 	left: 0; right: 0;
 	text-align: center;
 	width: 100%;
