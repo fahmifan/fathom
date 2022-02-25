@@ -27,17 +27,21 @@
 	stroke: none; 
 }
 
+.axis {
+	padding-top: 0.5rem;
+}
+
 .axis line {
 	stroke: rgba(218, 218, 218, 0.5);
 }
 
 .axis text {
-	font-size: 12px;
+	font-size: 1rem;
 	fill: #98a0a6;
 }
 
 .d3-tip {
-	font-size: 12px;
+	font-size: 1rem;
 	color: #959da5;
 	text-align: left;
 	background: rgba(0,0,0,.8);
